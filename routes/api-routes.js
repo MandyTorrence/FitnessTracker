@@ -30,7 +30,7 @@ module.exports = app => {
             });
     });
 
-    app.get("/api/workouts", (req, res) => {
+    app.post("/api/workouts", (req, res) => {
         db.Workout.create(req.body).then(data => {
             res.json(data);
         })
