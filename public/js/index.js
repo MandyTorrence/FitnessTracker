@@ -15,6 +15,7 @@ const toast = document.querySelector("#toast");
 const newWorkout = document.querySelector(".new-workout")
 let workoutType = null;
 let shouldNavigateAway = false;
+
 init();
 async function init() {
   if (location.search.split("=")[1] === undefined) {
@@ -23,7 +24,7 @@ async function init() {
       location.search = "?id=" + workout._id;
     }
     else {
-      newWorkout.classList.add("")
+      document.querySelector("#continue-btn").classList.add("d-none")
     }
   }
 }
