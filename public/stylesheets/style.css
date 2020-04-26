@@ -435,3 +435,21 @@ form > button {
     right: -320px;
   }
 }
+nav{
+  background-color: #2185d0;
+}
+nav a{
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+}
+
+nav a:not(:first-child):before {
+  content: '|';
+  padding: 0px 20px;
+  color: #21ba45;
+}
+
+nav a:hover{
+  color: #21ba45;
+}
