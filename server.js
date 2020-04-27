@@ -8,7 +8,7 @@ const app = express();
 
 app.use(logger("dev"));
 
-app.use(express.urlencoded({ extended: true }, { useUnifiedTopology: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
@@ -16,7 +16,7 @@ app.use(express.static("public"));
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
