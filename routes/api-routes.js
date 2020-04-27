@@ -22,7 +22,7 @@ module.exports = app => {
     app.put("/api/workouts/:id", (req, res) => {
         const { id } = req.params;
 
-        db.Workout.updateOne({ _id: id }, { $push: { excercises: req.body } }).then(data => {
+        db.Workout.updateOne({ _id: id }, { $push: { exercises: req.body } }).then(data => {
             res.json(data);
         })
             .catch(err => {
